@@ -1,20 +1,27 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface AuthAuth extends Schema.Component {
-  collectionName: 'components_auth_auths';
+export interface OrderedItemOrderedItem extends Schema.Component {
+  collectionName: 'components_ordered_item_ordered_items';
   info: {
-    displayName: 'Auth';
-    icon: 'lock';
+    displayName: 'Ordered-Item';
+    icon: 'shoppingCart';
+    description: '';
   };
   attributes: {
-    username: Attribute.String;
+    quantity: Attribute.Integer;
+    price: Attribute.Decimal;
+    product: Attribute.Relation<
+      'ordered-item.ordered-item',
+      'oneToOne',
+      'api::product.product'
+    >;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'auth.auth': AuthAuth;
+      'ordered-item.ordered-item': OrderedItemOrderedItem;
     }
   }
 }
