@@ -56,3 +56,4 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
 #Strapi CMS buillt from npx create-strapi-app
+# Built fo furniture sales nextJS app
